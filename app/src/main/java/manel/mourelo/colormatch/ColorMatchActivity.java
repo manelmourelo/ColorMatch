@@ -3,10 +3,12 @@ package manel.mourelo.colormatch;
 import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class ColorMatchActivity extends AppCompatActivity {
 
@@ -47,4 +49,12 @@ public class ColorMatchActivity extends AppCompatActivity {
         bgColorview.setText(Integer.toString(newStyle.getBgColor()));
     }
 
+    public void setNewText(View view) {
+        if(editor.getText().toString().isEmpty() == false){
+            editableText.setText(editor.getText());
+        }
+        else{
+            Toast.makeText(this, "ERROR: editor was empty", Toast.LENGTH_SHORT).show();
+        }
+    }
 }
