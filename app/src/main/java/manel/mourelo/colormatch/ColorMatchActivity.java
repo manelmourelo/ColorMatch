@@ -1,5 +1,6 @@
 package manel.mourelo.colormatch;
 
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.CheckBox;
@@ -16,7 +17,7 @@ public class ColorMatchActivity extends AppCompatActivity {
     private TextView textColorview;
     private TextView bgColorview;
 
-    Style style;
+    Style style = new Style(false, 0, 0);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,5 +31,20 @@ public class ColorMatchActivity extends AppCompatActivity {
         textColorview = findViewById(R.id.textColorView);
         bgColorview = findViewById(R.id.BGColorView);
 
+        setFromStyle(style);
+
     }
+
+    public void setFromStyle(Style newStyle){
+        checkBox.setChecked(newStyle.isBolt());
+        if(newStyle.isBolt() == true){
+            editableText.setTypeface(null, Typeface.BOLD);
+        }
+        else{
+            editableText.setTypeface(null, Typeface.NORMAL);
+        }
+        textColorview.setText(Integer.toString(newStyle.getTextColor()));
+        bgColorview.setText(Integer.toString(newStyle.getBgColor()));
+    }
+
 }
