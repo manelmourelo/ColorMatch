@@ -16,6 +16,8 @@ public class ColorMatchActivity extends AppCompatActivity {
     private TextView textColorview;
     private TextView bgColorview;
 
+    Style style;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
