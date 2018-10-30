@@ -89,16 +89,14 @@ public class ColorMatchActivity extends AppCompatActivity {
         switch (requestCode){
             case EDITTEXTCOLOR:
                     if(resultCode == RESULT_OK){
-                        style.setTextColor(data.getIntExtra("color", style.getBgColor()));
+                        style.setTextColor(data.getIntExtra("color", style.getTextColor()));
                         setFromStyle(style);
                     }
                 break;
             case EDITBGCOLOR:
                 if(resultCode == RESULT_OK){
-                    //int newValue = 0;
-                    //data.getIntExtra("color", newValue);
-                    //String newText = Integer.toString(newValue);
-                    //bgColorview.setText(newText);
+                    style.setBgColor(data.getIntExtra("color", style.getBgColor()));
+                    setFromStyle(style);
                 }
                 break;
             default:
