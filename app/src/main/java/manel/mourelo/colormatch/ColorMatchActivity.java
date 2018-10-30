@@ -57,4 +57,14 @@ public class ColorMatchActivity extends AppCompatActivity {
             Toast.makeText(this, "ERROR: editor was empty", Toast.LENGTH_SHORT).show();
         }
     }
+
+    public void setBold(View view) {
+        style.setBolt(checkBox.isChecked());
+        if(checkBox.isChecked() == true){
+            editableText.setTypeface(null, Typeface.BOLD);
+        }
+        else{
+            editableText.setTypeface(null, Typeface.NORMAL);
+        }
+    }
 }
