@@ -94,12 +94,12 @@
         android:layout_marginStart="16dp"
         android:text="TextView"
         android:textSize="18sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/button2"
-        app:layout_constraintEnd_toStartOf="@+id/button2"
+        app:layout_constraintBaseline_toBaselineOf="@+id/buttonTextColor"
+        app:layout_constraintEnd_toStartOf="@+id/buttonTextColor"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/buttonTextColor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
@@ -119,12 +119,12 @@
         android:layout_marginStart="16dp"
         android:text="TextView"
         android:textSize="18sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/button3"
-        app:layout_constraintEnd_toStartOf="@+id/button3"
+        app:layout_constraintBaseline_toBaselineOf="@+id/buttonBGColor"
+        app:layout_constraintEnd_toStartOf="@+id/buttonBGColor"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/buttonBGColor"
         android:layout_width="91dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
@@ -132,5 +132,5 @@
         android:layout_marginTop="16dp"
         android:text="@string/BGCOLOR"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonTextColor" />
 </android.support.constraint.ConstraintLayout>
