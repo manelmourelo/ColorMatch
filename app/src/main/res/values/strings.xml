@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">ColorMatch</string>
+    <string name="SampleText">SampleText</string>
+    <string name="SET">SET</string>
+    <string name="BoldText">Bold Text</string>
+    <string name="TextColor">TEXT COLOR</string>
+    <string name="BGCOLOR">BG COLOR</string>
 </resources>
