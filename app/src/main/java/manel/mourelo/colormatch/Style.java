@@ -5,7 +5,7 @@ public class Style {
     private int bgColor;
     private int textColor;
 
-    public Style(boolean bolt, int bgColor, int textVolor){
+    public Style(boolean bolt, int bgColor, int textColor){
         this.bolt = bolt;
         this.bgColor = bgColor;
         this.textColor = textColor;

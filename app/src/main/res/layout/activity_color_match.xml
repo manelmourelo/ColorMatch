@@ -14,8 +14,7 @@
         app:layout_constraintBottom_toTopOf="@+id/guideline"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:color/holo_orange_light" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline"
@@ -108,6 +107,7 @@
         android:layout_marginRight="16dp"
         android:layout_marginTop="16dp"
         android:text="@string/TextColor"
+        android:onClick="setTextColor"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/checkBoxBold" />
 
@@ -133,6 +133,7 @@
         android:layout_marginRight="16dp"
         android:layout_marginTop="16dp"
         android:text="@string/BGCOLOR"
+        android:onClick="setBGColor"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonTextColor" />
 </android.support.constraint.ConstraintLayout>

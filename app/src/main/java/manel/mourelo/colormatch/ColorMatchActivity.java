@@ -1,5 +1,6 @@
 package manel.mourelo.colormatch;
 
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -19,7 +20,10 @@ public class ColorMatchActivity extends AppCompatActivity {
     private TextView textColorview;
     private TextView bgColorview;
 
-    Style style = new Style(false, 0, 0);
+    Style style = new Style(false, 0xffffffff, 0xff000000);
+
+    public static final int EDITTEXTCOLOR = 0;
+    public static final int EDITBGCOLOR = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +50,9 @@ public class ColorMatchActivity extends AppCompatActivity {
             editableText.setTypeface(null, Typeface.NORMAL);
         }
         textColorview.setText(Integer.toString(newStyle.getTextColor()));
+        editableText.setTextColor(newStyle.getTextColor());
         bgColorview.setText(Integer.toString(newStyle.getBgColor()));
+        bgColor.setBackgroundColor(newStyle.getBgColor());
     }
 
     public void setNewText(View view) {
@@ -65,6 +71,39 @@ public class ColorMatchActivity extends AppCompatActivity {
         }
         else{
             editableText.setTypeface(null, Typeface.NORMAL);
+        }
+    }
+
+    public void setTextColor(View view) {
+        Intent intent = new Intent(this, ChooseColorActivity.class);
+        startActivityForResult(intent, EDITTEXTCOLOR);
+    }
+
+    public void setBGColor(View view) {
+        Intent intent = new Intent(this, ChooseColorActivity.class);
+        startActivityForResult(intent, EDITBGCOLOR);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        switch (requestCode){
+            case EDITTEXTCOLOR:
+                    if(resultCode == RESULT_OK){
+                        style.setTextColor(data.getIntExtra("color", style.getBgColor()));
+                        setFromStyle(style);
+                    }
+                break;
+            case EDITBGCOLOR:
+                if(resultCode == RESULT_OK){
+                    //int newValue = 0;
+                    //data.getIntExtra("color", newValue);
+                    //String newText = Integer.toString(newValue);
+                    //bgColorview.setText(newText);
+                }
+                break;
+            default:
+                super.onActivityResult(requestCode, resultCode, data);
+                break;
         }
     }
 }
